@@ -1,5 +1,40 @@
 '''
+main802_1_QBV.py:
 
+Tested with two back-2-back Ixia ports and a scheduler as example:
+ inScheduler['queue0'] = {'offset' : 0 , 'duration' : 250 , 'priority' : [0]   }
+ inScheduler['queue1'] = {'offset' : 250 , 'duration' : 250 , 'priority' : [1] }
+ inScheduler['queue2'] = {'offset' : 500 , 'duration' : 250 , 'priority' : [2] }
+ inScheduler['queue3'] = {'offset' : 750 , 'duration' : 250 , 'priority' : [3] }
+
+
+Step 1 - Init - Rest Session 1 established.
+Step 2 - Init - Enable Use Schedule Start Transmit in Test Options -> Global Settings.
+Step 3 - Init - Config Cycle Time to 2000 us using as basis last queue info.
+Step 4 - Init - Assign Ports to Session.
+Step 5 - Init -  Checking if all ports are up
+Step 5.1 - Init - Setting port Grand to Interleaved mode
+Step 5.1 - Init - Setting port Slave to Interleaved mode
+Step 6 - Init - Setting up gPTP GrandMaster Side on port 1/1
+Step 7 - Init - Setting up gPTP Slave Side on port 1/2
+Step 8 - Init -  Staring Protocols
+Step 9 - Verify -  PTP sessions are UP
+Step 10 - Init -  Create Unidirectional Raw Traffic Item
+Step 11 - Test - Verify no packets lost and correct Absolute Time Stamps 
+
+Supports IxNetwork API servers:
+   - Windows, Windows Connection Mgr and Linux
+
+Requirements:
+   - Minimum IxNetwork 8.50
+   - Python 3+
+   - pip install requests
+   - pip install ixnetwork_restpy (minimum version 1.0.51)
+
+RestPy Doc:
+    
+Usage:
+   - Enter: python <script>
 '''
 
 import sys
