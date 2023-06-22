@@ -30,6 +30,7 @@ Requirements:
    - Python 3+
    - pip install requests
    - pip install ixnetwork_restpy (minimum version 1.0.51)
+   - helperFunctions.py
 
 RestPy Doc:
     
