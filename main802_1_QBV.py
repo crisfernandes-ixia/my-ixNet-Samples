@@ -22,6 +22,11 @@ Step 9 - Verify -  PTP sessions are UP
 Step 10 - Init -  Create Unidirectional Raw Traffic Item
 Step 11 - Test - Verify no packets lost and correct Absolute Time Stamps 
 
+To DO: 
+- Get latency info 
+- Determine how to deal with multiple priorities in the queue for stats sake
+- Determine how to use the PPS; per flow or per traffic item ? 
+
 Supports IxNetwork API servers:
    - Windows, Windows Connection Mgr and Linux
 
